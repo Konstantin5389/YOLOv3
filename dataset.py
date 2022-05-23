@@ -13,7 +13,7 @@ class VOCDataset(Dataset):
         self.root_dir = root_dir
         self.phase = phase
         self.feature_size = feature_size
-        self.image_size = 416
+        self.image_size = image_size
         self.C = num_classes
         self.transform = transform
         self.list = pd.read_csv(os.path.join(root_dir, phase + ".csv"))
