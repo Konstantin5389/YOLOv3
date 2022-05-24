@@ -46,8 +46,8 @@ class YOLOLoss(nn.Module):
         targets[..., 3:5] = torch.log(
             targets[..., 3:5] / scaled_anchors + 1e-16)
         box_loss = self.mse(
-            predictions[..., 1:5],
-            targets[..., 1:5]
+            predictions[..., 1:5][obj],
+            targets[..., 1:5][obj]
         )
 
         # -----class loss------ #
